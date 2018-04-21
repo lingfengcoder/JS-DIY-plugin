@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>DIY PLUGIN-TEST</title>
+	<link href="" media="all" rel="stylesheet" type="text/css">
+	
+</head>
+
+<body>
+测试
+<input id="pt" type="" /><button onclick="$('#pt').pluginTest('clear');">清空</button>
+
+</body>
+<script src="jquery-3.2.1.min.js"></script>
+<script src="pluginTest.js"></script>
+<script>
+var pt=$("#pt").pluginTest({
+     name:"wz",
+	 extraParams:(param)=>{
+	 console.log(param);
+	 return {age:23,love:"zcy",ppip:'223'}
+	 }
+	}).on('PTclick',function(event,param){
+	  console.log("PTclick>>callback:");
+	  console.log(event);
+	  console.log(param);
+	});
+	
+	$("#pt").pluginTest("upload");
+	
+	
+$(document).ready(()=>{
+console.log("document ready");
+	
+});
+/*
+
+*/
+
+</script>
+
+</html>
